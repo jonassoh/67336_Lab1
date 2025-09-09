@@ -13,7 +13,7 @@ console.log("Hello, World!");
 // Write JavaScript code below to display "Welcome to JavaScript!" in the console.
 
 // Your code here
-
+console.log("Welcome to JavaScript!")
 // Challenge 1.1
 // Now let's get into variables and data types of JS. 
 // The following exanples are given to illustrate the syntax used to declare variables and data types:
@@ -32,7 +32,13 @@ console.log(greeting, nextYearAge);
 // Then, perform some operations with these variables and display the results in the console.
 
 // Your code here
+let color = "blue"
+let height = "172 cm"
+let likes = true
+console.log(color, height, likes)
 
+let greeting_new = "My favorite color is " + color + "and my height is" + height + "!";
+console.log(greeting_new)
 //Challenge 1.2
 // Here is an example of a function in JS that calculates the sum of two given numbers a and b:
 function sum(a, b) {
@@ -46,7 +52,17 @@ console.log(sum(5, 7));
 // Call the function with different arguments and display the results in the console.
 
 // Your code here
+function concat(s1, s2) {
+    if (typeof(s1) == "string" && typeof(s2) == "string") {
+        return s1 + s2
+    }
+    else {
+        return "Invalid Arguments!"
+    }
+}
 
+console.log(concat("testing", " function"))
+console.log(concat("invalid", 1))
 // Challenge 1.3
 // Here is an example of if-else statements in JS. It logs to console depending on whether certain conditions are fulfilled.
 let number = 8;
@@ -61,7 +77,18 @@ if (number > 0) {
 // Write a program that checks if a string is empty, has only one character, or has multiple characters, and displays the result.
 
 // Your code here
-
+function check_string(s) {
+    if (s.length == 0) {
+        console.log("String is empty")
+    } else if (s.length == 1) {
+        console.log("String has one char")
+    } else {
+        console.log("String has multiple chars")
+    }
+}
+check_string("")
+check_string("t")
+check_string("testing")
 // Challenge 1.4
 // Here we have an example of a for loop that prints its incrementation to the console from 1 to 10.
 for (let i = 1; i <= 10; i++) {
@@ -71,7 +98,11 @@ for (let i = 1; i <= 10; i++) {
 // Write a program that prints only the even numbers from 1 to 20 using a for loop.
 
 // Your code here
-
+for (let i = 1; i <= 20; i++) {
+    if (i % 2 == 0) {
+        console.log(i)
+    }
+}
 // Challenge 1.5
 // Here we have an example of a while loop that prints its incrementation to the console from 1 to 10.
 let i = 1;
@@ -83,7 +114,13 @@ while (i <= 10) {
 // Write a program that prints the even numbers from 20 to 1 using a while loop.
 
 //Your code here
-
+let j = 20;
+while (j > 0) {
+    if (j % 2 == 0) {
+        console.log(j)
+    }
+    j--;
+}
 // Challenge 2.1
 // Here we have a function that takes in an array and adds the sum of all the numbers in the array as an output.
 let numbers = [1, 2, 3, 4, 5];
@@ -101,7 +138,13 @@ console.log(arraySum(numbers));
 // Hint: use .join()
 
 // Your code here
+let foods = ["apple", "rice", "fries", "chicken", "noodles"]
+foods.forEach(food => console.log(food))
 
+function all_foods(arr) {
+    return arr.join(',')
+}
+console.log(all_foods(foods))
 // Challenge 2.2
 // Here we define a Person object with various properties like name, age, and job.
 let person = {
@@ -120,7 +163,17 @@ printPerson(person);
 // Then, write a function that takes a car object and prints its properties.
 
 // Your code here
+let car = {
+    make: "idk",
+    model: "irdk",
+    year: "2023"
+};
+console.log(car);
 
+function printCar(c) {
+    console.log(`Make: ${c.make}, Model: ${c.model}, Year: ${c.year}`);
+}
+printCar(car);
 // Challenge 2.3
 // Here we have a function that manipulates an array of numbers that we previously defined in Challenge 2.1.
 function addItem(arr, item) {
@@ -142,7 +195,11 @@ console.log(updateJob({name: "Peter", age: 21, job: "Engineer"}, "Manager"));
 // Then, write a function that updates the year of a car object.
 
 // Your code here
-
+function updateCar(c, new_year) {
+    c.year = new_year;
+    return c
+}
+console.log(updateCar({make: "idk", model: "idk", year: "2022"}, "2023"));
 // Incorporating HTML with JS
 
 // For all following code, it will not be able to be run directly in the console. 
@@ -169,7 +226,9 @@ console.log(myDiv, myP, myH1);
 // Make sure to use both getElementById() and querySelector() to get in practice with both!
 
 // Your code here
-
+let anotherDiv = document.getElementById("anotherDiv")
+let anotherP = document.querySelector(".anotherP")
+console.log(anotherDiv, anotherP)
 // Challenge 3.2
 // Here is an example of changing the content of an element we selected in Challenge 3.1:
 myDiv.textContent = "Hello, World!";
@@ -177,7 +236,7 @@ myDiv.textContent = "Hello, World!";
 // Write a program that changes the content of an element you selected in Challenge 3.1.
 
 // Your code here
-
+anotherDiv.textContent = "Hello Again"
 // See the section marked "Challenge 3.2 | Example" in index.html for an example of how we can use JS manipulation of selected elements to make a button.
 // Add a button to the HTML file and write a program that changes the content of a div when the button is clicked.
 
@@ -192,6 +251,9 @@ document.body.appendChild(newElement);
 // Write code that creates a new element and adds it to the DOM.
 
 // Your code here
+let anotherNewElem = document.createElement("p")
+anotherNewElem.textContent = "This is another paragraph added to the DOM"
+document.body.appendChild(anotherNewElem)
 
 // See the section marked "Challenge 3.3.2 | Example" in index.html for a more advanced example of how we can use this ability to create and add elements to create a dynamic grocery list.
 
@@ -295,13 +357,23 @@ function displayData(data) {
 // Hint: use the helpful tip from the example in Challenge 5.2.1 to reference the JSON output quickly.
 
 function fetchYourData() {
-    // Your code here
+    fetch("https://api.github.com/users")
+    .then(response => response.json())
+    .then(data => {console.log(data);
+        displayYourData(data);})
+    .catch(error => console.error("Error:", error))
 }
 
 function displayYourData(data) {
     const dataDisplay = document.getElementById('yourDataDisplay');
     dataDisplay.innerHTML = ''; 
-    // Your code here
+    
+    data.forEach(user => {
+        const userElement = document.createElement('div');
+        userElement.classList.add("user");
+        userElement.innerHTML = `<p> <b>Login:</b> ${user.login} <b>| Url:</b> ${user.url}`
+        dataDisplay.appendChild(userElement)
+    })
 }
 
 // Congratulations! You have now completed learning the basics of Javascript. 
