@@ -8,7 +8,7 @@
 // Challenge 1.0
 // We can write to the console (your terminal) with console.log()
 // You should see "Hello, World!" in your terminal when you run npm start
-console.log("Hello, World!");
+// console.log("Hello, World!");
 
 // Write JavaScript code below to display "Welcome to JavaScript!" in the console.
 
@@ -20,13 +20,13 @@ console.log("Welcome to JavaScript!")
 let firstName = "Katelyn";
 let age = 20;
 let isStudent = true;
-console.log(firstName, age, isStudent);
+// console.log(firstName, age, isStudent);
 
 // The following examples are given to illustrate how to use string concatenation, simple arithmetic/manipulation of numerical variables, 
 // and console logging with variables works in Javascript.
 let greeting = "Hello, " + firstName + "!";
 let nextYearAge = age + 1;
-console.log(greeting, nextYearAge);
+// console.log(greeting, nextYearAge);
 
 // Declare variables to store your favorite color, your height in centimeters, and a boolean indicating if you like JavaScript. 
 // Then, perform some operations with these variables and display the results in the console.
@@ -44,7 +44,7 @@ console.log(greeting_new)
 function sum(a, b) {
     return a + b;
 }
-console.log(sum(5, 7));
+// console.log(sum(5, 7));
 
 // Write a function that takes two strings as arguments and returns their concatenation (hint: we used concatenation in Challenge 1.1). 
 // Use "typeof" to check the arguments are both strings before returning, otherwise return "Invalid Arguments!"
@@ -65,14 +65,14 @@ console.log(concat("testing", " function"))
 console.log(concat("invalid", 1))
 // Challenge 1.3
 // Here is an example of if-else statements in JS. It logs to console depending on whether certain conditions are fulfilled.
-let number = 8;
-if (number > 0) {
-    console.log("The number is positive.");
-} else if (number < 0) {
-    console.log("The number is negative.");
-} else {
-    console.log("The number is zero.");
-}
+// let number = 8;
+// if (number > 0) {
+//     console.log("The number is positive.");
+// } else if (number < 0) {
+//     console.log("The number is negative.");
+// } else {
+//     console.log("The number is zero.");
+// }
 
 // Write a program that checks if a string is empty, has only one character, or has multiple characters, and displays the result.
 
@@ -91,9 +91,9 @@ check_string("t")
 check_string("testing")
 // Challenge 1.4
 // Here we have an example of a for loop that prints its incrementation to the console from 1 to 10.
-for (let i = 1; i <= 10; i++) {
-    console.log(i);
-}
+// for (let i = 1; i <= 10; i++) {
+//     console.log(i);
+// }
 
 // Write a program that prints only the even numbers from 1 to 20 using a for loop.
 
@@ -105,11 +105,11 @@ for (let i = 1; i <= 20; i++) {
 }
 // Challenge 1.5
 // Here we have an example of a while loop that prints its incrementation to the console from 1 to 10.
-let i = 1;
-while (i <= 10) {
-    console.log(i);
-    i++;
-}
+// let i = 1;
+// while (i <= 10) {
+//     console.log(i);
+//     i++;
+// }
 
 // Write a program that prints the even numbers from 20 to 1 using a while loop.
 
@@ -124,14 +124,14 @@ while (j > 0) {
 // Challenge 2.1
 // Here we have a function that takes in an array and adds the sum of all the numbers in the array as an output.
 let numbers = [1, 2, 3, 4, 5];
-numbers.forEach(num => console.log(num));
+// numbers.forEach(num => console.log(num));
 
 function arraySum(arr) {
     let sum = 0;
     arr.forEach(num => sum += num);
     return sum;
 }
-console.log(arraySum(numbers));
+// console.log(arraySum(numbers));
 
 // Create an array of your five favorite foods and write a program to print each food. 
 // Then, write a function that takes an array of foods and returns a string listing all the foods separated by commas.
@@ -152,12 +152,12 @@ let person = {
     age: 21,
     job: "Software Developer"
 };
-console.log(person);
+// console.log(person);
 
 function printPerson(p) {
     console.log(`Name: ${p.name}, Age: ${p.age}, Job: ${p.job}`);
 }
-printPerson(person);
+// printPerson(person);
 
 // Create an object representing a car (make, model, year). 
 // Then, write a function that takes a car object and prints its properties.
@@ -176,18 +176,18 @@ function printCar(c) {
 printCar(car);
 // Challenge 2.3
 // Here we have a function that manipulates an array of numbers that we previously defined in Challenge 2.1.
-function addItem(arr, item) {
-    arr.push(item);
-    return arr;
-}
-console.log(addItem([1, 2, 3], 4));
+// function addItem(arr, item) {
+//     arr.push(item);
+//     return arr;
+// }
+// console.log(addItem([1, 2, 3], 4));
 
 // We also have another function that updates a property of the Person object.
-function updateJob(p, newJob) {
-    p.job = newJob;
-    return p;
-}
-console.log(updateJob({name: "Peter", age: 21, job: "Engineer"}, "Manager"));
+// function updateJob(p, newJob) {
+//     p.job = newJob;
+//     return p;
+// }
+// console.log(updateJob({name: "Peter", age: 21, job: "Engineer"}, "Manager"));
 
 // Write a function that removes the last item from an array. 
 // Hint: use .pop() instead of .push()
@@ -217,10 +217,10 @@ console.log(updateCar({make: "idk", model: "idk", year: "2022"}, "2023"));
 
 // See Challenge 3.1 in the corresponding index.html file for the HTML component of this challenge (the example will be marked with "Challenge 3.1 | Example").
 // Here are some examples of selecting elements in the index.html file. 
-let myDiv = document.getElementById("myDiv");
-let myP = document.querySelector(".myP");
-let myH1 = document.querySelector("h1");
-console.log(myDiv, myP, myH1);
+// let myDiv = document.getElementById("myDiv");
+// let myP = document.querySelector(".myP");
+// let myH1 = document.querySelector("h1");
+// console.log(myDiv, myP, myH1);
 
 // Write JavaScript code to select the elements in the HTML snippet marked "Challenge 3.1 | Your Turn" and log them to the console.
 // Make sure to use both getElementById() and querySelector() to get in practice with both!
